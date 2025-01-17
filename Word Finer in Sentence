@@ -1,0 +1,19 @@
+def is_hidden(word, text):
+    word = word.lower()
+    text = text.lower()
+    
+    index = 0
+    for char in word:
+        index = text.find(char, index)
+        if index == -1:
+            return "no"
+        index += 1
+    return "yes"
+
+# Get input from the user
+word_input = input("Enter the word to search for: ")
+text_input = input("Enter the text to search within: ")
+
+# Check if the word is hidden and print the result
+result = is_hidden(word_input, text_input)
+print(result)
