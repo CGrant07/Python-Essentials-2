@@ -1,0 +1,21 @@
+palindrome = input("What is your palindrome? ")
+allCaps = palindrome.upper()
+print(allCaps)
+noSpaces = allCaps.replace(' ','')
+listOfPalindrome = list(noSpaces)
+print(listOfPalindrome)
+
+lengthOfList = len(listOfPalindrome) - 1
+loopLength = (lengthOfList // 2)
+
+holdValue = 0
+
+for i in range (loopLength):
+    if listOfPalindrome[i] == listOfPalindrome[lengthOfList - i]:
+       holdValue += 1
+    else:
+        break
+if holdValue == loopLength:
+    print("It's a palindrome")
+else:
+    print("It's not a palindrome")
