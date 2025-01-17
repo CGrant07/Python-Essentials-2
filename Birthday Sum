@@ -1,0 +1,13 @@
+def calculate_birthday_number(birthday):
+  sumOfBirthdayNumber = sum(int(digit) for digit in str(birthday))
+
+  if sumOfBirthdayNumber >= 10:
+    return calculate_birthday_number(sumOfBirthdayNumber)  # Recursive call with sum (integer)
+  else:
+    return sumOfBirthdayNumber  # Base case: return the sum (integer)
+
+def birthday(birthday):  # Wrapper function for user input
+  # ... (Optional: input validation if needed)
+  return calculate_birthday_number(birthday)
+
+print(birthday(20231225))  
